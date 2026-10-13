@@ -47,7 +47,7 @@ const CarListing = ({ car, index = 0 }) => {
             loading="lazy"
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#2E1A40] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-[#2E1A40] via-transparent to-transparent" />
 
           <span className="absolute left-3 top-3 rounded-full bg-[#8B3FC8] px-3 py-1 text-xs font-semibold text-white">
             {car.type}

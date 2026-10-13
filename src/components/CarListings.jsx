@@ -19,7 +19,7 @@ const CarListings = ({ isHome = false }) => {
           <p className="mx-auto mt-3 max-w-xl text-[#F0EEF5]/60">
             Hand-picked luxury and performance cars from trusted dealers.
           </p>
-          <div className="mx-auto mt-5 h-1 w-20 rounded-full bg-gradient-to-r from-[#5C2D7A] to-[#8B3FC8]" />
+          <div className="mx-auto mt-5 h-1 w-20 rounded-full bg-linear-to-r from-[#5C2D7A] to-[#8B3FC8]" />
         </div>
 
         {/* Grid */}
