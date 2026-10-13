@@ -85,7 +85,7 @@ const Hero = () => {
         >
           <div className="absolute inset-4 rounded-3xl bg-[#8B3FC8]/30 blur-2xl" />
           <img
-            src="/images/lamborghini-huracan.jpg"
+            src="/images/hero-img.jpg"
             alt="Featured luxury car"
             className="animate-float relative w-full rounded-3xl border border-[#F0EEF5]/10 object-cover shadow-2xl shadow-black/50"
           />
