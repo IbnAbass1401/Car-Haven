@@ -20,12 +20,7 @@ const Hero = () => {
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 md:grid-cols-2 md:py-24 lg:px-8">
         {/* Text side */}
         <div className="text-center md:text-left">
-          <span
-            className="animate-fade-up inline-block rounded-full border border-[#8B3FC8]/50 bg-[#8B3FC8]/10 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[#F0EEF5]"
-          >
-            Drive the extraordinary
-          </span>
-
+        
           <h1
             className="animate-fade-up mt-6 text-4xl font-extrabold leading-tight text-[#F0EEF5] sm:text-5xl lg:text-6xl"
             style={{ animationDelay: '0.15s' }}
