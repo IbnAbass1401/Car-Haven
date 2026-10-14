@@ -10,16 +10,13 @@ const CarListings = ({ isHome = false }) => {
       <div className="mx-auto max-w-7xl">
         {/* Heading */}
         <div className="mb-12 text-center">
-          <span className="inline-block rounded-full border border-[#8B3FC8]/50 bg-[#8B3FC8]/10 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[#F0EEF5]">
-            Featured Collection
-          </span>
-          <h2 className="mt-4 text-3xl font-extrabold text-[#F0EEF5] sm:text-4xl">
+          <h2 className="text-3xl font-extrabold text-[#F0EEF5] sm:text-4xl">
             {isHome ? 'Featured Cars' : 'Browse All Cars'}
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-[#F0EEF5]/60">
             Hand-picked luxury and performance cars from trusted dealers.
           </p>
-          <div className="mx-auto mt-5 h-1 w-20 rounded-full bg-linear-to-r from-[#5C2D7A] to-[#8B3FC8]" />
+          <div className="mx-auto mt-5 h-1 w-16 rounded bg-[#8B3FC8]" />
         </div>
 
         {/* Grid */}
@@ -34,7 +31,7 @@ const CarListings = ({ isHome = false }) => {
           <div className="mt-12 text-center">
             <Link
               to="/cars"
-              className="inline-block rounded-full border border-[#8B3FC8] px-8 py-3 font-semibold text-[#F0EEF5] transition-all duration-300 hover:bg-[#8B3FC8] hover:shadow-lg hover:shadow-[#8B3FC8]/40"
+              className="inline-block rounded-lg border border-[#8B3FC8] px-8 py-3 font-semibold text-[#F0EEF5] transition-colors duration-300 hover:bg-[#8B3FC8]"
             >
               View All Cars
             </Link>
