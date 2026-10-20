@@ -1,0 +1,194 @@
+{
+  "cars": [
+  {
+    "id": "1",
+    "title": "BMW M8 Competition",
+    "type": "BMW",
+    "location": "Los Angeles, CA",
+    "description": "A high-performance luxury coupe with a twin-turbo V8, sharp handling, premium leather upholstery, a modern digital cockpit, and advanced driver-assistance features.",
+    "price": "$134,100",
+    "image": "/images/bmw-m8.JPG",
+    "year": 2023,
+    "mileage": "8,500 mi",
+    "transmission": "Automatic",
+    "fuelType": "Gasoline",
+    "company": {
+      "name": "BMW of Los Angeles",
+      "description": "A premium dealership offering BMW performance models, luxury vehicles, and vehicle servicing.",
+      "contactEmail": "sales@bmwlosangeles.example",
+      "contactPhone": "+1-310-555-0123"
+    }
+  },
+  {
+    "id": "2",
+    "title": "Ferrari SF90 Stradale",
+    "type": "Ferrari",
+    "location": "Miami, FL",
+    "description": "A striking plug-in hybrid supercar combining a twin-turbo V8 with electric motors, sculpted aerodynamics, and a driver-focused cockpit.",
+    "price": "$625,000",
+    "image": "/images/ferrari-sf90.JPG",
+    "year": 2024,
+    "mileage": "2,100 mi",
+    "transmission": "Automatic",
+    "fuelType": "Plug-in hybrid",
+    "company": {
+      "name": "Ferrari of Miami",
+      "description": "A luxury performance-car showroom focused on Ferrari sales, ownership support, and specialist service.",
+      "contactEmail": "sales@ferrariofmiami.example",
+      "contactPhone": "+1-305-555-0177"
+    }
+  },
+  {
+    "id": "3",
+    "title": "Mercedes-Benz S-Class",
+    "type": "Mercedes-Benz",
+    "location": "New York, NY",
+    "description": "An executive luxury sedan with a refined cabin, ambient lighting, a widescreen digital display, advanced driver assistance, and a smooth ride.",
+    "price": "$123,000",
+    "image": "/images/mercedes-s-class.JPG",
+    "year": 2023,
+    "mileage": "12,000 mi",
+    "transmission": "Automatic",
+    "fuelType": "Gasoline",
+    "company": {
+      "name": "Mercedes-Benz Manhattan",
+      "description": "A luxury dealership offering Mercedes-Benz passenger vehicles, financing support, and authorised service.",
+      "contactEmail": "sales@mbmanhattan.example",
+      "contactPhone": "+1-212-555-0199"
+    }
+  },
+  {
+    "id": "4",
+    "title": "Lamborghini Huracán EVO",
+    "type": "Lamborghini",
+    "location": "Las Vegas, NV",
+    "description": "A dramatic mid-engine supercar featuring a naturally aspirated V10, aggressive styling, responsive handling, and a cockpit built around the driver.",
+    "price": "$274,000",
+    "image": "/images/lamborghini-huracan.JPG",
+    "year": 2023,
+    "mileage": "4,600 mi",
+    "transmission": "Automatic",
+    "fuelType": "Gasoline",
+    "company": {
+      "name": "Lamborghini Las Vegas",
+      "description": "A specialist exotic-car dealership serving performance-car enthusiasts and luxury vehicle buyers.",
+      "contactEmail": "sales@lamborghinilasvegas.example",
+      "contactPhone": "+1-702-555-0134"
+    }
+  },
+  {
+    "id": "5",
+    "title": "Bugatti Chiron Super Sport",
+    "type": "Bugatti",
+    "location": "San Francisco, CA",
+    "description": "An exclusive hypercar known for its quad-turbocharged W16 engine, handcrafted cabin, dramatic bodywork, and extraordinary straight-line performance.",
+    "price": "$3,500,000",
+    "image": "/images/bugatti-chiron.JPG",
+    "year": 2024,
+    "mileage": "900 mi",
+    "transmission": "Automatic",
+    "fuelType": "Gasoline",
+    "company": {
+      "name": "Bugatti San Francisco",
+      "description": "A fictional specialist showroom for rare hypercars, bespoke vehicle sourcing, and private client services.",
+      "contactEmail": "sales@bugatti-sf.example",
+      "contactPhone": "+1-415-555-0188"
+    }
+  },
+  {
+    "id": "6",
+    "title": "Audi R8 Coupe",
+    "type": "Audi",
+    "location": "Chicago, IL",
+    "description": "A sleek performance coupe with a naturally aspirated V10, quattro all-wheel drive on applicable trims, and a cockpit designed around the driver.",
+    "price": "$162,000",
+    "image": "/images/audi-r8.JPG",
+    "year": 2023,
+    "mileage": "7,200 mi",
+    "transmission": "Automatic",
+    "fuelType": "Gasoline",
+    "company": {
+      "name": "Audi Chicago",
+      "description": "A premium Audi retailer offering new and pre-owned vehicles, trade-in assistance, and service support.",
+      "contactEmail": "sales@audichicago.example",
+      "contactPhone": "+1-312-555-0166"
+    }
+  },
+  {
+    "id": "7",
+    "title": "Nissan GT-R Nismo",
+    "type": "Nissan",
+    "location": "New York, NY",
+    "description": "A track-focused sports car featuring a twin-turbo V6, advanced all-wheel-drive system, bold aerodynamics, and strong acceleration.",
+    "price": "$210,000",
+    "image": "/images/nissan-gtr.JPG",
+    "year": 2024,
+    "mileage": "3,800 mi",
+    "transmission": "Automatic",
+    "fuelType": "Gasoline",
+    "company": {
+      "name": "Nissan of Manhattan",
+      "description": "A vehicle retailer offering Nissan models, pre-owned inventory, financing options, and maintenance services.",
+      "contactEmail": "sales@nissanmanhattan.example",
+      "contactPhone": "+1-212-555-0147"
+    }
+  },
+  {
+    "id": "8",
+    "title": "Range Rover Sport",
+    "type": "Land Rover",
+    "location": "San Diego, CA",
+    "description": "A luxury SUV combining a premium cabin, confident road manners, capable all-terrain technology, and a practical everyday driving position.",
+    "price": "$98,000",
+    "image": "/images/range-rover-sport.JPG",
+    "year": 2023,
+    "mileage": "10,400 mi",
+    "transmission": "Automatic",
+    "fuelType": "Gasoline",
+    "company": {
+      "name": "Land Rover San Diego",
+      "description": "A premium SUV dealership offering Land Rover vehicles, ownership assistance, and authorised service support.",
+      "contactEmail": "sales@landroversd.example",
+      "contactPhone": "+1-858-555-0111"
+    }
+  },
+  {
+    "id": "9",
+    "title": "Porsche 911 Carrera",
+    "type": "Porsche",
+    "location": "Austin, TX",
+    "description": "An iconic sports car with precise steering, a rear-engine layout, a refined interior, and a balance of everyday usability and performance.",
+    "price": "$115,000",
+    "image": "/images/porsche-911.JPG",
+    "year": 2023,
+    "mileage": "6,100 mi",
+    "transmission": "Automatic",
+    "fuelType": "Gasoline",
+    "company": {
+      "name": "Porsche Austin",
+      "description": "A Porsche retailer specialising in sports cars, pre-owned inventory, and dedicated customer service.",
+      "contactEmail": "sales@porscheaustin.example",
+      "contactPhone": "+1-512-555-0128"
+    }
+  },
+  {
+    "id": "10",
+    "title": "Chevrolet Corvette Stingray",
+    "type": "Chevrolet",
+    "location": "Dallas, TX",
+    "description": "A mid-engine American sports car with a naturally aspirated V8, bold proportions, a driver-focused cockpit, and impressive performance for its class.",
+    "price": "$72,000",
+    "image": "/images/corvette-stingray.JPG",
+    "year": 2023,
+    "mileage": "5,300 mi",
+    "transmission": "Automatic",
+    "fuelType": "Gasoline",
+    "company": {
+      "name": "Chevrolet of Dallas",
+      "description": "A fictional dealership listing Chevrolet vehicles and offering sales assistance, trade-ins, and maintenance support.",
+      "contactEmail": "sales@chevroletofdallas.example",
+      "contactPhone": "+1-214-555-0175"
+    }
+  }
+]
+}
