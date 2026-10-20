@@ -8,7 +8,7 @@ const CarListings = ({ isHome = false }) => {
   const [loading,setLoading] = useState(true)
   useEffect(() => {
     const fetchCars = async() => {
-      const apiUrl = isHome ? 'http://localhost:8000/cars?_page=1&_per_page=4' : 'http://localhost:8000/cars'
+      const apiUrl = isHome ? '/api/cars?_page=1&_per_page=4' : '/api/cars'
       try {
         const res = await fetch (apiUrl)
         const data = await res.json()
