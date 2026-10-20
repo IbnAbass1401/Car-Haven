@@ -1,9 +1,27 @@
 import { Link } from 'react-router-dom';
-import cars from '../cars.json';
 import CarListing from './CarListing';
+import { useState,useEffect } from 'react';
+import Spinner from "./Spinner"
 
 const CarListings = ({ isHome = false }) => {
-  const carList = isHome ? cars.slice(0, 4) : cars;
+  const [cars, setCars] = useState([])
+  const [loading,setLoading] = useState(true)
+  useEffect(() => {
+    const fetchCars = async() => {
+      const apiUrl = isHome ? 'http://localhost:8000/cars?_page=1&_per_page=4' : 'http://localhost:8000/cars'
+      try {
+        const res = await fetch (apiUrl)
+        const data = await res.json()
+        setCars(isHome ? data.data : data);
+      } catch (error) {
+        console.log('Error fetching data error')
+      } finally {
+        setLoading (false)
+      }
+    }
+
+    fetchCars()
+  }, [])
 
   return (
     <section className="bg-[#0D0D0D] px-4 py-16 sm:px-6 lg:px-8">
@@ -20,11 +38,16 @@ const CarListings = ({ isHome = false }) => {
         </div>
 
         {/* Grid */}
+
+         {loading ? (
+                <Spinner loading={loading} />
+            ) : (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {carList.map((car, index) => (
+          {cars.map((car, index) => (
             <CarListing key={car.id} car={car} index={index} />
           ))}
         </div>
+        )}
 
         {/* View all button (home only) */}
         {isHome && (
