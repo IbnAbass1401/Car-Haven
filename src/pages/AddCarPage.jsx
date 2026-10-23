@@ -80,14 +80,13 @@ const AddCarPage = ({ addCarSubmit }) => {
       },
     };
 
-    try {
-  await addJobSubmit(newJob);
-  toast.success('Job added successfully');
-  navigate('/jobs');
+  try {
+  await addCarSubmit(newCar);
+  toast.success('Car listed successfully');
+  navigate('/cars');
 } catch (err) {
-  toast.error(`Could not add job: ${err.message}`);
+  toast.error(`Could not list car: ${err.message}`);
 }
-  };
 
   return (
     <section className="bg-[#0D0D0D] min-h-screen">
