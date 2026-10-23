@@ -38,7 +38,7 @@ const AddCarPage = ({ addCarSubmit }) => {
     reader.onload = () => {
       const img = new Image();
       img.onload = () => {
-        const maxWidth = 1000;
+        const maxWidth = 600;
         const scale = Math.min(1, maxWidth / img.width);
         const canvas = document.createElement('canvas');
         canvas.width = img.width * scale;
@@ -46,7 +46,7 @@ const AddCarPage = ({ addCarSubmit }) => {
         canvas
           .getContext('2d')
           .drawImage(img, 0, 0, canvas.width, canvas.height);
-        setImage(canvas.toDataURL('image/jpeg', 0.8));
+        setImage(canvas.toDataURL('image/jpeg', 0.6));
       };
       img.src = reader.result;
     };
