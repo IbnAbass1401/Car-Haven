@@ -15,16 +15,14 @@ import EditCarPage from './pages/EditCarPage'
 const App = () => {
 
   //Add New Car
-  const addCar = async (newCar) => {
-    const res = await fetch('/api/cars', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newCar),
-    });
-    return;
-  }
+  const addJob = async (newJob) => {
+  const res = await fetch('/api/jobs', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(newJob),
+  });
+  if (!res.ok) throw new Error(`Server replied ${res.status}`);
+};
 
   // Delete Job
   const deleteCar = async (id) => {

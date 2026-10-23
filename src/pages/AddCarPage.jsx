@@ -80,9 +80,13 @@ const AddCarPage = ({ addCarSubmit }) => {
       },
     };
 
-    await addCarSubmit(newCar);
-    toast.success('Car listed successfully');
-    return navigate('/cars');
+    try {
+  await addJobSubmit(newJob);
+  toast.success('Job added successfully');
+  navigate('/jobs');
+} catch (err) {
+  toast.error(`Could not add job: ${err.message}`);
+}
   };
 
   return (
