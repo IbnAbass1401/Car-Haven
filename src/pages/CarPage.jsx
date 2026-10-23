@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Link, useLoaderData } from 'react-router-dom'
+import { Link, useLoaderData, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import {
   FaArrowLeft,
   FaMapMarkerAlt,
@@ -17,11 +17,19 @@ import {
 const card =
   'rounded-2xl border border-[#F0EEF5]/10 bg-gradient-to-b from-[#2E1A40]/80 to-[#2E1A40]/40 backdrop-blur'
 
-const CarPage = () => {
+const CarPage = ({ deleteCar }) => {
+  const navigate = useNavigate()
   const car = useLoaderData()
   const dealer = car.company
-  const [confirmDelete, setConfirmDelete] = useState(false)
 
+  const onDeleteClick = async (carId) => {
+    const confirm = window.confirm('Are you sure you want to delete this listing?')
+    if (!confirm) return
+
+    await deleteCar(carId)
+    toast.success('Car deleted successfully')
+    navigate('/cars')
+  }
   const specs = [
     { icon: FaCalendarAlt, label: 'Year', value: car.year },
     { icon: FaTachometerAlt, label: 'Mileage', value: car.mileage },
@@ -174,33 +182,12 @@ const CarPage = () => {
                   
                 <button
                     type="button"
-                    onClick={() => setConfirmDelete(true)}
+                    onClick={() => onDeleteClick(car.id)}
                     className="flex items-center justify-center gap-2 rounded-xl border border-[#EF4444]/40 bg-[#EF4444]/10 px-4 py-3 text-sm font-semibold text-[#F87171] transition hover:border-[#B91C1C] hover:bg-[#B91C1C] hover:text-white"
                     >
                     <FaTrashAlt /> Delete
                 </button>
               </div>
-
-              {confirmDelete && (
-                <div className="mt-4 rounded-xl border border-[#EF4444]/30 bg-[#EF4444]/10 p-4 text-sm">
-                    <p className="text-[#F0EEF5]/80">Delete this car permanently?</p>
-                    <div className="mt-3 flex gap-2">
-                    <button
-                        type="button"
-                        className="flex-1 rounded-lg bg-[#DC2626] py-2 font-semibold text-white transition hover:bg-[#B91C1C]"
-                    >
-                        Yes, delete
-                    </button>
-                    <button
-                        type="button"
-                        onClick={() => setConfirmDelete(false)}
-                        className="flex-1 rounded-lg bg-[#F0EEF5]/10 py-2 font-semibold transition hover:bg-[#F0EEF5]/20"
-                    >
-                        Cancel
-                    </button>
-                    </div>
-                </div>
-             )}
             </div>
           </aside>
         </div>
