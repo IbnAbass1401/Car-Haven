@@ -15,7 +15,7 @@ import {
   FaShieldAlt,
 } from 'react-icons/fa'
 
-import ConfirmModal from '../components/ConfirmModal'
+import ConfirmModal from '../components/modalConfirm'
 
 const card =
   'rounded-2xl border border-[#F0EEF5]/10 bg-gradient-to-b from-[#2E1A40]/80 to-[#2E1A40]/40 backdrop-blur'
