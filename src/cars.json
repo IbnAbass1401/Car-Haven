@@ -191,6 +191,7 @@
       }
     },
     {
+      "id": "h7ZlVXnS32A",
       "title": "fddsfdsfa",
       "type": "dsfsdf",
       "location": "fdfdsfs",
@@ -202,12 +203,11 @@
       "transmission": "Automatic",
       "fuelType": "Petrol",
       "company": {
-        "name": "dfdsadsfds",
+        "name": "shut up",
         "description": "fsdfdsfad",
         "contactEmail": "dfdsfdsf@gmail.com",
         "contactPhone": "33343434"
-      },
-      "id": "h7ZlVXnS32A"
+      }
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

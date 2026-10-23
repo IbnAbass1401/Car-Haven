@@ -174,7 +174,7 @@ const CarPage = ({ deleteCar }) => {
               </h3>
               <div className="grid grid-cols-2 gap-3">
                 <Link
-                  to={`/cars/edit/${car.id}`}
+                  to={`/edit-car/${car.id}`}
                   className="flex items-center justify-center gap-2 rounded-xl bg-[#F0EEF5]/10 px-4 py-3 text-sm font-semibold transition hover:bg-[#8B3FC8]"
                 >
                   <FaEdit /> Edit
