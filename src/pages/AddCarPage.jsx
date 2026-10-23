@@ -25,7 +25,7 @@ const AddCarPage = ({ addCarSubmit }) => {
   const navigate = useNavigate();
 
   // Pick a photo from the computer, shrink it, and store it as a base64 string
-  const handleImageChange = (e) => {
+    const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (!file) return;
 
@@ -37,17 +37,33 @@ const AddCarPage = ({ addCarSubmit }) => {
     const reader = new FileReader();
     reader.onload = () => {
       const img = new Image();
-      img.onerror = () => toast.error('Could not read that photo. Try another one.');
+      img.onerror = () =>
+        toast.error('Could not read that photo. Try another one.');
       img.onload = () => {
-        const maxWidth = 600;
-        const scale = Math.min(1, maxWidth / img.width);
-        const canvas = document.createElement('canvas');
-        canvas.width = img.width * scale;
-        canvas.height = img.height * scale;
-        canvas
-          .getContext('2d')
-          .drawImage(img, 0, 0, canvas.width, canvas.height);
-        setImage(canvas.toDataURL('image/jpeg', 0.6));
+        const MAX_CHARS = 70000; // keeps the whole request under the 100 KB limit
+        let result = '';
+
+        for (const width of [800, 640, 480, 360, 280]) {
+          const scale = Math.min(1, width / img.width);
+          const canvas = document.createElement('canvas');
+          canvas.width = img.width * scale;
+          canvas.height = img.height * scale;
+          canvas
+            .getContext('2d')
+            .drawImage(img, 0, 0, canvas.width, canvas.height);
+
+          for (const quality of [0.7, 0.5]) {
+            result = canvas.toDataURL('image/jpeg', quality);
+            if (result.length <= MAX_CHARS) break;
+          }
+          if (result.length <= MAX_CHARS) break;
+        }
+
+        if (result.length > MAX_CHARS) {
+          toast.error('Photo is too large. Try a different one.');
+          return;
+        }
+        setImage(result);
       };
       img.src = reader.result;
     };
