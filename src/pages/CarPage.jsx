@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link, useLoaderData, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import {
@@ -14,6 +15,8 @@ import {
   FaShieldAlt,
 } from 'react-icons/fa'
 
+import ConfirmModal from '../components/ConfirmModal'
+
 const card =
   'rounded-2xl border border-[#F0EEF5]/10 bg-gradient-to-b from-[#2E1A40]/80 to-[#2E1A40]/40 backdrop-blur'
 
@@ -21,15 +24,15 @@ const CarPage = ({ deleteCar }) => {
   const navigate = useNavigate()
   const car = useLoaderData()
   const dealer = car.company
+  const [showConfirm, setShowConfirm] = useState(false)
 
-  const onDeleteClick = async (carId) => {
-    const confirm = window.confirm('Are you sure you want to delete this listing?')
-    if (!confirm) return
-
-    await deleteCar(carId)
+  const onDeleteClick = async () => {
+    setShowConfirm(false)
+    await deleteCar(car.id)
     toast.success('Car deleted successfully')
     navigate('/cars')
   }
+
   const specs = [
     { icon: FaCalendarAlt, label: 'Year', value: car.year },
     { icon: FaTachometerAlt, label: 'Mileage', value: car.mileage },
@@ -179,19 +182,28 @@ const CarPage = ({ deleteCar }) => {
                 >
                   <FaEdit /> Edit
                 </Link>
-                  
+
                 <button
-                    type="button"
-                    onClick={() => onDeleteClick(car.id)}
-                    className="flex items-center justify-center gap-2 rounded-xl border border-[#EF4444]/40 bg-[#EF4444]/10 px-4 py-3 text-sm font-semibold text-[#F87171] transition hover:border-[#B91C1C] hover:bg-[#B91C1C] hover:text-white"
-                    >
-                    <FaTrashAlt /> Delete
+                  type="button"
+                  onClick={() => setShowConfirm(true)}
+                  className="flex items-center justify-center gap-2 rounded-xl border border-[#EF4444]/40 bg-[#EF4444]/10 px-4 py-3 text-sm font-semibold text-[#F87171] transition hover:border-[#B91C1C] hover:bg-[#B91C1C] hover:text-white"
+                >
+                  <FaTrashAlt /> Delete
                 </button>
               </div>
             </div>
           </aside>
         </div>
       </div>
+
+      <ConfirmModal
+        open={showConfirm}
+        title="Delete this listing?"
+        message="This will permanently remove the car from CarHaven."
+        confirmLabel="Delete listing"
+        onConfirm={onDeleteClick}
+        onCancel={() => setShowConfirm(false)}
+      />
     </div>
   )
 }
