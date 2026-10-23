@@ -37,6 +37,7 @@ const AddCarPage = ({ addCarSubmit }) => {
     const reader = new FileReader();
     reader.onload = () => {
       const img = new Image();
+      img.onerror = () => toast.error('Could not read that photo. Try another one.');
       img.onload = () => {
         const maxWidth = 600;
         const scale = Math.min(1, maxWidth / img.width);
@@ -80,13 +81,14 @@ const AddCarPage = ({ addCarSubmit }) => {
       },
     };
 
-  try {
-  await addCarSubmit(newCar);
-  toast.success('Car listed successfully');
-  navigate('/cars');
-} catch (err) {
-  toast.error(`Could not list car: ${err.message}`);
-}
+     try {
+      await addCarSubmit(newCar);
+      toast.success('Car listed successfully');
+      navigate('/cars');
+    } catch (err) {
+      toast.error(`Could not list car: ${err.message}`);
+    }
+  };
 
   return (
     <section className="bg-[#0D0D0D] min-h-screen">
